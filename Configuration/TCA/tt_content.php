@@ -1,4 +1,5 @@
 <?php
+
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'fal_gallery',
     'Pi1',

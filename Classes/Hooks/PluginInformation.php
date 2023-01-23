@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\Hooks;
 
 /*
@@ -23,8 +24,8 @@ use TYPO3\CMS\Core\LinkHandling\Exception\UnknownUrnException;
 use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\Folder;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Service\FlexFormService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class PluginInformation
@@ -37,12 +38,12 @@ class PluginInformation
      * This class has an alias in TYPO3 v9
      * @var FlexFormService
      */
-    protected $flexFormService = null;
+    protected $flexFormService;
 
     /**
      * @var LinkService
      */
-    protected $linkService = null;
+    protected $linkService;
 
     /**
      * PluginInformation constructor.

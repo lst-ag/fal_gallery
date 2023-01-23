@@ -1,13 +1,14 @@
 <?php
+
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'CoStack.FalGallery',
+    'FalGallery',
     'Pi1',
-    ['Gallery' => 'show, list, category'],
-    ['Gallery' => '']
+    [\CoStack\FalGallery\Controller\GalleryController::class => 'show, list, category'],
+    [\CoStack\FalGallery\Controller\GalleryController::class => '']
 );
 
 $listTypeInfo = &$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info'];

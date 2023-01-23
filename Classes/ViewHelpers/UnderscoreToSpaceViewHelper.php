@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\ViewHelpers;
 
 /*

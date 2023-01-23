@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\Property\TypeConverter;
 
 /*
@@ -20,12 +21,11 @@ use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\Folder;
 use TYPO3\CMS\Core\Resource\ResourceInterface;
-use TYPO3\CMS\Core\SingletonInterface;
 
 /**
  * Class FileConverter
  */
-class FileConverter extends AbstractFileFolderConverter implements SingletonInterface
+class FileConverter extends AbstractFileFolderConverter
 {
     /**
      * @var array<string>
@@ -43,7 +43,7 @@ class FileConverter extends AbstractFileFolderConverter implements SingletonInte
     protected $expectedObjectType = File::class;
 
     /**
-     * @param string|integer $source
+     * @param string|int $source
      *
      * @return FileInterface|Folder
      */

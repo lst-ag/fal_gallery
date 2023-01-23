@@ -1,14 +1,8 @@
 {
-    "name": "co-stack/fal_gallery",
+    "name": "co-stack/fal-gallery",
     "description": "Easy to use folder based gallery with separate single-, category- and list view that supports any TYPO3 FAL driver. Official successor of wt_gallery",
     "type": "typo3-cms-extension",
     "license": "GPL-2.0",
-    "support": {
-        "email": "codi@co-stack.com",
-        "docs": "https://docs.typo3.org/typo3cms/extensions/fal_gallery/",
-        "issues": "https://github.com/co-stack/fal_gallery/issues",
-        "source": "https://github.com/co-stack/fal_gallery"
-    },
     "keywords": [
         "TYPO3",
         "FAL",
@@ -24,7 +18,7 @@
     "require": {
         "php": "^7.0",
         "ext-pdo": "*",
-        "typo3/cms-core": "^9.5 || ^10.0"
+        "typo3/cms-core": "^10.0 || ^11.0"
     },
     "autoload": {
         "psr-4": {
@@ -36,7 +30,10 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0.x-dev"
+            "dev-master": "4.0.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "fal_gallery"
         }
     }
 }

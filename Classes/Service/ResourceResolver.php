@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\Service;
 
 /*
@@ -19,18 +20,17 @@ namespace CoStack\FalGallery\Service;
 use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Resource\ResourceStorage;
-use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class ResourceResolver
  */
-class ResourceResolver implements SingletonInterface
+class ResourceResolver
 {
     /**
      * @var LinkService
      */
-    protected $resolver = null;
+    protected $resolver;
 
     /**
      * @var array
@@ -66,7 +66,7 @@ class ResourceResolver implements SingletonInterface
         $value = $parameter[$parameterKey];
 
         if (0 === strpos($value, 't3://')) {
-            return (false !== ($urn = parse_url($value)) && isset($urn['scheme'], $urn['host'], $urn['query']));
+            return false !== ($urn = parse_url($value)) && isset($urn['scheme'], $urn['host'], $urn['query']);
         }
 
         return false;
@@ -92,6 +92,6 @@ class ResourceResolver implements SingletonInterface
     {
         $urn = parse_url($linkParameter);
         parse_str($urn['query'], $data);
-        return ResourceFactory::getInstance()->getStorageObject($data['storage']);
+        return GeneralUtility::makeInstance(ResourceFactory::class)->getStorageObject($data['storage']);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\Property\TypeConverter;
 
 /*
@@ -16,7 +17,6 @@ namespace CoStack\FalGallery\Property\TypeConverter;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Core\Resource\ResourceInterface;
 use TYPO3\CMS\Extbase\Domain\Model\AbstractFileFolder;
 use TYPO3\CMS\Extbase\Property\Exception;
 use TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationInterface;
@@ -32,18 +32,14 @@ abstract class AbstractFileFolderConverter extends \TYPO3\CMS\Extbase\Property\T
      * @param array $convertedChildProperties
      * @param PropertyMappingConfigurationInterface $configuration
      *
-     * @return ResourceInterface
+     * @return AbstractFileFolder
      * @throws Exception
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @SuppressWarnings(PHPMD.LongVariable)
      */
-    public function convertFrom(
-        $source,
-        string $targetType,
-        array $convertedChildProperties = [],
-        PropertyMappingConfigurationInterface $configuration = null
-    ): AbstractFileFolder {
+    public function convertFrom($source, string $targetType, array $convertedChildProperties = [], PropertyMappingConfigurationInterface $configuration = null)
+    {
         $object = $this->getOriginalResource($source);
         if (empty($this->expectedObjectType) || !$object instanceof $this->expectedObjectType) {
             throw new Exception(

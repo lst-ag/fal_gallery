@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\Hooks;
 
 /*
@@ -24,13 +25,12 @@ use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\Folder;
 use TYPO3\CMS\Core\Resource\FolderInterface;
-use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Slots that pick up signals when a folder is created, changed or removed.
  */
-class FileMutationSlot implements SingletonInterface
+class FileMutationSlot
 {
     /**
      * @var Connection
@@ -51,7 +51,6 @@ class FileMutationSlot implements SingletonInterface
      * @param FileInterface $file The file
      * @param Folder $folder The folder
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -66,7 +65,6 @@ class FileMutationSlot implements SingletonInterface
      * @param FileInterface $file The file
      * @param Folder $folder The folder
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -83,7 +81,6 @@ class FileMutationSlot implements SingletonInterface
      * @param string $newFileIdentifier The created file name
      * @param Folder $targetFolder The folder the file was placed into
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -99,7 +96,6 @@ class FileMutationSlot implements SingletonInterface
      * @param Folder $targetFolder The folder
      * @param Folder $originalFolder The folder
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -115,7 +111,6 @@ class FileMutationSlot implements SingletonInterface
      * @param FileInterface $file The file
      * @param string $targetFolder
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -128,8 +123,6 @@ class FileMutationSlot implements SingletonInterface
      * Post file replace
      *
      * @param FileInterface $file The file
-     *
-     * @return void
      */
     public function postFileReplace(FileInterface $file)
     {
@@ -140,8 +133,6 @@ class FileMutationSlot implements SingletonInterface
      * Pre file delete
      *
      * @param FileInterface $file The file
-     *
-     * @return void
      */
     public function preFileDelete(FileInterface $file)
     {
@@ -155,8 +146,6 @@ class FileMutationSlot implements SingletonInterface
      * category.
      *
      * @param FolderInterface $folder The folder
-     *
-     * @return void
      */
     protected function flushCacheForAffectedPages(FolderInterface $folder)
     {
@@ -174,8 +163,6 @@ class FileMutationSlot implements SingletonInterface
      * Flush cache for given page ids
      *
      * @param array $pids An array of page ids
-     *
-     * @return void
      */
     protected function flushCacheForPages(array $pids)
     {
@@ -238,7 +225,6 @@ SQL;
     /**
      * Set the database connection
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */

@@ -1,4 +1,5 @@
 <?php
+
 namespace CoStack\FalGallery\Hooks;
 
 /*
@@ -22,13 +23,12 @@ use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\Folder;
-use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Slots that pick up signals when a folder is created, changed or removed.
  */
-class FolderMutationSlot implements SingletonInterface
+class FolderMutationSlot
 {
     /**
      * The database connection
@@ -57,7 +57,6 @@ class FolderMutationSlot implements SingletonInterface
      * @param object $other Other
      * @param object $parameters Parameters
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -74,7 +73,6 @@ class FolderMutationSlot implements SingletonInterface
      * @param string $newName The new name
      * @param Folder $originalFolder The original folder
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -90,7 +88,6 @@ class FolderMutationSlot implements SingletonInterface
      * @param Folder $folder The folder
      * @param string $newName The new name
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -106,8 +103,6 @@ class FolderMutationSlot implements SingletonInterface
      * category.
      *
      * @param Folder $folder The folder
-     *
-     * @return void
      */
     protected function flushCacheForAffectedPages(Folder $folder)
     {
@@ -122,8 +117,6 @@ class FolderMutationSlot implements SingletonInterface
      * Flush cache for given page ids
      *
      * @param array $pids An array of page ids
-     *
-     * @return void
      */
     protected function flushCacheForPages(array $pids)
     {
@@ -182,7 +175,6 @@ SQL;
     /**
      * Set the database connection
      *
-     * @return void
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
